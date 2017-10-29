@@ -1,4 +1,4 @@
->博客地址[Python脚本实现抢券](http://blog.csdn.net/white_idiot/article/details/78385441)
+>博客地址——[Python脚本实现抢券](http://blog.csdn.net/white_idiot/article/details/78385441)
 
 # 参数获取
 
