@@ -104,3 +104,16 @@ coupon/
             print(r.text)
             break
     ```
+
+# 运行
+
+直接在命令行运行
+
+```
+python main.py
+```
+
+
+![](http://upload-images.jianshu.io/upload_images/2482101-16e1c54f95521402.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+看见上面这几个字气不气？？？
