@@ -1,3 +1,5 @@
+>博客地址[Python脚本实现抢券](http://blog.csdn.net/white_idiot/article/details/78385441)
+
 # 参数获取
 
 要实现发送请求抢券，需要获取券的`URL`，并定制请求头`Request Headers`
