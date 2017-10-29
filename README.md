@@ -1,7 +1,5 @@
 # 参数获取
 
----
-
 要实现发送请求抢券，需要获取券的`URL`，并定制请求头`Request Headers`
 
 下面所有参数都来自Chrome的开发者工具。大多浏览器都有开发者工具，可以按需选择
@@ -48,8 +46,6 @@ https://sale.jd.com/act/hznk5FbYfOTiEp.html
 ```
 
 # 脚本实现
-
----
 
 目录结构
 
