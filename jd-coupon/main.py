@@ -2,7 +2,7 @@ import requests
 import datetime
 
 # 抢券的时间
-scheduled_time = "2017-10-29 14:38"
+scheduled_time = "2017-10-29 14:57"
 # 浏览器及版本
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
 # 券的URL
