@@ -2,13 +2,13 @@ import requests
 import datetime
 
 # 抢券的时间
-scheduled_time = "2017-10-29 14:57"
-# 浏览器及版本
-user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
+scheduled_time = "2017-10-30 00:00"
 # 券的URL
-couponUrl = "https://act-jshop.jd.com/couponSend.html?callback=jQuery3358743&roleId=8620885&key=b832a574abe84874b960c056c3ac6c6d&_=1509248591553"
+couponUrl = "https://act-jshop.jd.com/couponSend.html?callback=jQuery7718692&roleId=8620903&key=10e5977effdf438a8f61cb95b576e0f5&_=1509292645477"
 # 券的Referer
 referer = "https://sale.jd.com/act/hznk5FbYfOTiEp.html"
+# 浏览器及版本
+user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
 
 
 # 将cookie转为字典
