@@ -2,11 +2,11 @@ import requests
 import datetime
 
 # 抢券的时间
-scheduled_time = "2017-10-30 00:00"
+scheduled_time = "2017-11-07 20:11"
 # 券的URL
-couponUrl = "https://act-jshop.jd.com/couponSend.html?callback=jQuery7718692&roleId=8620903&key=10e5977effdf438a8f61cb95b576e0f5&_=1509292645477"
+requestUrls = ["https://act-jshop.jd.com/couponSend.html?callback=jQuery2891171&roleId=8781460&key=48b40c64619a4bc9a3912c98d5a94fed&_=1510055639531","https://act-jshop.jd.com/couponSend.html?callback=jQuery6218594&roleId=8725660&key=a606cfe7c5b045d1b5e58b43a59fd9b1&_=1510056463018"]
 # 券的Referer
-referer = "https://sale.jd.com/act/hznk5FbYfOTiEp.html"
+referers = ["https://sale.jd.com/act/bD1USlOE8n.html","https://sale.jd.com/act/bD1USlOE8n.html"]
 # 浏览器及版本
 user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36'
 
@@ -24,7 +24,6 @@ def get_cookie():
 # 配置Session的参数
 session = requests.Session()
 session.headers['User-Agent'] = user_agent
-session.headers['Referer'] = referer
 session.cookies = requests.utils.cookiejar_from_dict(get_cookie())
 
 
@@ -37,9 +36,11 @@ def getCoupon():
 
         # 如果到预定时间就开始发送请求，然后打印结果
         if now == scheduled_time:
-            r = session.get(couponUrl)
-            print(r.text)
-            break
+            for i in range(len(requestUrls)):
+                session.headers['Referer'] = referers[i]
+                r = session.get(requestUrls[i])
+                print(r.text)
+        break
 
 
 if __name__ == '__main__':
