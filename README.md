@@ -38,7 +38,6 @@ ipLoc-djd=1-72-2799-0; ipLocation=%u5317%u4EAC; areaId=1; ......
 
 ![](http://upload-images.jianshu.io/upload_images/2482101-f65ea39c17d73c2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-
 ## 获取券的Referer
 
 同上，复制`Referer`参数
