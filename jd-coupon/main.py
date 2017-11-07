@@ -2,9 +2,9 @@ import requests
 import datetime
 
 # 抢券的时间
-scheduled_time = "2017-11-07 20:11"
+scheduled_time = "2017-11-07 22:00"
 # 券的URL
-requestUrls = ["https://act-jshop.jd.com/couponSend.html?callback=jQuery2891171&roleId=8781460&key=48b40c64619a4bc9a3912c98d5a94fed&_=1510055639531","https://act-jshop.jd.com/couponSend.html?callback=jQuery6218594&roleId=8725660&key=a606cfe7c5b045d1b5e58b43a59fd9b1&_=1510056463018"]
+requestUrls = ["https://act-jshop.jd.com/couponSend.html?callback=jQuery8299904&roleId=8875111&key=a9185b7963d74999bdfde0ab214b31bb&_=1510062919603","https://act-jshop.jd.com/couponSend.html?callback=jQuery9197213&roleId=8817197&key=7b9cef8b76f64c3ba2474e810382d69b&_=1510062967022"]
 # 券的Referer
 referers = ["https://sale.jd.com/act/bD1USlOE8n.html","https://sale.jd.com/act/bD1USlOE8n.html"]
 # 浏览器及版本
@@ -35,12 +35,12 @@ def getCoupon():
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 
         # 如果到预定时间就开始发送请求，然后打印结果
-        if now == scheduled_time:
+        if now >= scheduled_time:
             for i in range(len(requestUrls)):
                 session.headers['Referer'] = referers[i]
                 r = session.get(requestUrls[i])
                 print(r.text)
-        break
+            break
 
 
 if __name__ == '__main__':
