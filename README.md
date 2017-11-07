@@ -131,3 +131,24 @@ python main.py
 ![](http://upload-images.jianshu.io/upload_images/2482101-ab1d7c9baf852edc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 不过看到这行字还是挺开心的
+
+有些时候要在一个页面里抢几张券，所以把参数改成了列表
+
+```
+# 券的URL
+requestUrls = ["https://act-jshop.jd.com/couponSend.html?callback=jQuery2891171&roleId=8781460&key=48b40c64619a4bc9a3912c98d5a94fed&_=1510055639531","https://act-jshop.jd.com/couponSend.html?callback=jQuery6218594&roleId=8725660&key=a606cfe7c5b045d1b5e58b43a59fd9b1&_=1510056463018"]
+
+# 券的Referer
+referers = ["https://sale.jd.com/act/bD1USlOE8n.html","https://sale.jd.com/act/bD1USlOE8n.html"]
+
+# 如果到预定时间就开始发送请求，然后打印结果
+        if now == scheduled_time:
+            for i in range(len(requestUrls)):
+                session.headers['Referer'] = referers[i]
+                r = session.get(requestUrls[i])
+                print(r.text)
+        break
+```
+
+![](http://upload-images.jianshu.io/upload_images/2482101-3332eb610d1baf4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
