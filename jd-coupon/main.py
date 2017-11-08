@@ -35,7 +35,7 @@ def getCoupon():
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
 
         # 如果到预定时间就开始发送请求，然后打印结果
-        if now >= scheduled_time:
+        if now == scheduled_time:
             for i in range(len(requestUrls)):
                 session.headers['Referer'] = referers[i]
                 r = session.get(requestUrls[i])
