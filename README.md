@@ -12,7 +12,6 @@
 2. 进入抢券页面
 3. 打开开发者工具（Chrome的快捷键是F12）
 4. 切换到Network栏
-5. 按F5刷新抢券页面
 
 ![](http://upload-images.jianshu.io/upload_images/2482101-0cb61f096e57f9cf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -46,66 +45,6 @@ ipLoc-djd=1-72-2799-0; ipLocation=%u5317%u4EAC; areaId=1; ......
 https://sale.jd.com/act/hznk5FbYfOTiEp.html
 ```
 
-# 脚本实现
-
-目录结构
-
-```
-coupon/
-    __init__.py
-    cookie.txt
-    main.py
-```
-
-1. 将复制的`cookie`复制到`cookie.txt`文件中
-
-    ```
-    ipLoc-djd=1-72-2799-0; ipLocation=%u5317%u4EAC; areaId=1; ......
-    ```
-
-2. 写一个把`cookie.txt`转为字典的函数
-
-    ```
-    def get_cookie():
-    with open("cookie.txt") as f:
-        cookies={}
-        for line in f.read().split(';'):
-            name,value=line.strip().split('=',1)
-            cookies[name]=value
-        return cookies
-    ```
-
-2. 配置参数
-
-    ```
-    user_agent = 'Mozilla/5.0 ......'
-    couponUrl = 'https://act-jshop.jd.com/couponSend.html? ......'
-    referer = 'https://sale.jd.com/act/hznk5FbYfOTiEp.html'
-    ```
-
-4. 声明一个Session对象，并将参数赋值给他
-
-    ```
-    session = requests.Session()
-    session.headers['User-Agent'] = user_agent
-    session.headers['Referer'] = referer
-    session.cookies = requests.utils.cookiejar_from_dict(get_cookie())
-    ```
-
-5. 设置一个`while(True)`的循环，将预定时间和当前时间比较，如果相等，就发送请求
-
-    ```
-    while (True):
-        # 当前时间
-        now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M')
-
-        # 如果到预定时间就开始发送请求，然后打印结果
-        if now == scheduled_time:
-            r = session.get(couponUrl)
-            print(r.text)
-            break
-    ```
-
 # 运行
 
 直接在命令行运行
@@ -113,7 +52,6 @@ coupon/
 ```
 python main.py
 ```
-
 
 ![](http://upload-images.jianshu.io/upload_images/2482101-16e1c54f95521402.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
