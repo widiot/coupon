@@ -84,7 +84,7 @@ referers = ["https://sale.jd.com/act/bD1USlOE8n.html","https://sale.jd.com/act/b
                 session.headers['Referer'] = referers[i]
                 r = session.get(requestUrls[i])
                 print(r.text)
-        break
+            break
 ```
 
 ![](http://upload-images.jianshu.io/upload_images/2482101-3332eb610d1baf4e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
